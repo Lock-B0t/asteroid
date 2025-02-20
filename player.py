@@ -1,11 +1,11 @@
-import circleshape as cs
-import constants as con
+from circleshape import CircleShape
+from constants import *
 import pygame
 
-class Player(cs.CircleShape):
+class Player(CircleShape):
 
     def __init__(self, x, y):
-        super().__init__(x, y, con.PLAYER_RADIUS)
+        super().__init__(x, y, PLAYER_RADIUS)
         self.rotation = 0
 
     def triangle(self):
@@ -20,7 +20,7 @@ class Player(cs.CircleShape):
         pygame.draw.polygon(screen, "white", self.triangle(), 2)
 
     def rotate(self, dt):
-        self.rotation += con.PLAYER_TURN_SPEED * dt
+        self.rotation += PLAYER_TURN_SPEED * dt
 
     def update(self, dt):
         keys = pygame.key.get_pressed()
@@ -37,4 +37,7 @@ class Player(cs.CircleShape):
 
     def move(self, dt):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
-        self.position += forward * con.PLAYER_SPEED * dt
+        self.position += forward * PLAYER_SPEED * dt
+
+
+#class Shot(CircleShape):
