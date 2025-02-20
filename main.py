@@ -8,7 +8,7 @@ def main():
     dt = 0
 
     print("Starting Asteroids!")
-    print(f"Screen width: {con.SCREEN_WIDTH}")
+    print(f"Screedn width: {con.SCREEN_WIDTH}")
     print(f"Screen height: {con.SCREEN_HEIGHT}")
     screen = pygame.display.set_mode((con.SCREEN_WIDTH, con.SCREEN_WIDTH))
     player = ply.Player(con.SCREEN_WIDTH / 2, con.SCREEN_HEIGHT / 2)
@@ -20,6 +20,7 @@ def main():
             if event.type == pygame.QUIT:
                 return
     
+        player.update(dt)
         screen.fill("black")
         player.draw(screen)
 
