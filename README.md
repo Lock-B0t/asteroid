@@ -1,1 +1,3 @@
-# Simple Asteriod
+# Simple Asteriod Game!
+
+A WIP~
